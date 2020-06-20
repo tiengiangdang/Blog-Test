@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+///// api test
+Route::get('/User', 'Api\BlogController@index');
+Route::get('User/{id}', 'BlogController@index');
+Route::post('User', 'BlogController@store');
+Route::put('User/{id}', 'BlogController@update');
+Route::delete('User/{id}', 'BlogController@delete');
